@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <div className='w-full flex place-content-center fixed bottom-10'>
+      <div className='w-full flex place-content-center fixed bottom-10 z-50'>
         <Navbar />
       </div>
       <Home />

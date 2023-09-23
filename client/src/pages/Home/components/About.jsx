@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import InterestLayout from '../../../components/InterestLayout/InterestLayout';
+import ServicesLayout from '../../../components/ServicesLayout/ServicesLayout';
+import StoryLayout from '../../../components/StoryLayout/StoryLayout';
 
 function About() {
 
-    const [selectedOption, setSelectedOption] = useState('')
+    const [selectedOption, setSelectedOption] = useState('interests')
+    
     console.log(selectedOption)
     const handleSelection = (e) => {
         console.log(e.target.id)
@@ -38,7 +41,9 @@ function About() {
                     </div>
                 </div>
             </div>
-            <InterestLayout />
+            {selectedOption == 'interests' ? <InterestLayout /> : null}
+            {selectedOption == 'story' ? <StoryLayout /> : null}
+            {selectedOption == 'services' ? <ServicesLayout /> : null}
         </div>
   )
 }
