@@ -1,15 +1,16 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import splt from 'spltjs';
-import anime from 'animejs/lib/anime.es.js';
+import { motion } from "framer-motion"
+import AnimatedText from './components/AnimatedText';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 
 function InterestLayout() {
 
-    console.log('dw')
+    
     const [selectedItem, setSelectedItem] = useState([]);
     const [chosenText, setChosenText] = useState('')
 
@@ -17,6 +18,22 @@ function InterestLayout() {
     console.log(wasIntersecting)
     
     const interestParagraph = useRef(null);
+
+    const placeholderText = [
+        { type: "heading1", text: "GAMING" },
+        {
+          type: "heading1",
+          text: "3D GRAPHICS"
+        },
+        {
+          type: "heading1",
+          text: "TECHNOLOGY"
+        },
+        {
+          type: "heading1",
+          text: "PHILOSOPHY"
+        }
+    ];
     
     const options = {
         root: null,
@@ -37,7 +54,7 @@ function InterestLayout() {
         
         handleScrolling();
         
-        animateText();
+        // animateText();
         const observer = new IntersectionObserver(callBackFn, options);
         if(interestParagraph.current) observer.observe(interestParagraph.current);
       
@@ -69,18 +86,20 @@ function InterestLayout() {
     }
 
     const animateText = () => {
-        
-            splt({
-                reveal: true
-            });
+
+
+
+            // splt({
+            //     reveal: true
+            // });
               
-            anime({
-                targets: '.reveal',
-                translateY: [42, 0],
-                loop: 0,
-                delay: anime.stagger(25),
-                easing: 'cubicBezier(.71,-0.77,.43,1.67)'
-            });
+            // anime({
+            //     targets: '.reveal',
+            //     translateY: [42, 0],
+            //     loop: 0,
+            //     delay: anime.stagger(25),
+            //     easing: 'cubicBezier(.71,-0.77,.43,1.67)'
+            // });
         
     }
     
@@ -114,15 +133,32 @@ function InterestLayout() {
   return (
     <div className='mt-10'>
     <div ref={interestParagraph} className={`hidden md:block`}>
-      {wasIntersecting ? <div>
-        <p  onMouseEnter={(e) => handleHovering(e)} className={`${wasIntersecting ? 'splt' : null} transition-all text-white text-5xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-10`}>GAMING</p>
-        <p  onMouseEnter={(e) => handleHovering(e)} className={`${wasIntersecting ? 'splt' : null} transition-all text-white text-5xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-10`}>3D GRAPHICS</p>
-        <p  onMouseEnter={(e) => handleHovering(e)} className={`${wasIntersecting ? 'splt' : null} transition-all text-white text-5xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-10`}>TECHNOLOGY</p>
-        <p  onMouseEnter={(e) => handleHovering(e)} className={`${wasIntersecting ? 'splt' : null} transition-all text-white text-5xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-10`}>PHILOSOPHY</p>
-            {chosenText !== '' ? <div className='bg-white text-black font-black tracking-widest absolute rounded-md max-w-[20%] min-w-[10%] left-[60%] bottom-[-60%] translate-x-[60%] p-5 hidden md:block'>
-                <p>{chosenText}</p>
-            </div> : null}
-        </div> : null} 
+      {wasIntersecting ?
+        <motion.div
+        
+            className="App"
+            initial="hidden"
+            animate="visible">
+
+            <div className="container">
+                {placeholderText.map((item, index) => {
+                return <AnimatedText {...item} key={index} />
+            })}
+            </div>
+
+        </motion.div> 
+        // <div>
+        //     <p  onMouseEnter={(e) => handleHovering(e)} className={`${wasIntersecting ? 'splt' : null} transition-all text-white text-5xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16`}>GAMING</p>
+        //     <p  onMouseEnter={(e) => handleHovering(e)} className={`${wasIntersecting ? 'splt' : null} transition-all text-white text-5xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16`}>3D GRAPHICS</p>
+        //     <p  onMouseEnter={(e) => handleHovering(e)} className={`${wasIntersecting ? 'splt' : null} transition-all text-white text-5xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16`}>TECHNOLOGY</p>
+        //     <p  onMouseEnter={(e) => handleHovering(e)} className={`${wasIntersecting ? 'splt' : null} transition-all text-white text-5xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10`}>PHILOSOPHY</p>
+        //     {chosenText !== '' ? <div className='bg-white text-black font-black tracking-widest absolute rounded-md max-w-[20%] min-w-[10%] left-[60%] bottom-[-60%] translate-x-[60%] p-5 hidden md:block'>
+        //         <p>{chosenText}</p>
+        //     </div> 
+        //     : null}
+        // </div> 
+
+        : null} 
     </div>
         <div className='grid grid-cols-1 mb-28 mx-10 grid-rows-3 md:hidden text-white gap-16'>
             <div>
