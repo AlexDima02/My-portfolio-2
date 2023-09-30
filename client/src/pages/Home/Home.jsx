@@ -1,11 +1,16 @@
 import React from 'react'
 import Header from '../../components/Header/Header';
 import About from './components/About';
+import Work from './components/Work';
+import Navbar from '../../components/Navbar/Navbar';
 
 function Home(){
 
     return (
         <>
+            <div className='w-full flex place-content-center fixed bottom-10 z-50'>
+                <Navbar />
+            </div>
             <Header />
             <div className='border border-red-400 flex flex-col place-content-start min-h-screen -z-50'>
                     <div className='flex justify-center place-content-center overflow-hidden mt-12'>
@@ -35,6 +40,9 @@ function Home(){
             </div>
             <div className='border border-red-500 min-h-screen'>
                 <About />
+            </div>
+            <div className='border border-red-500 min-h-screen'>
+                <Work />
             </div>
         </>
     )
