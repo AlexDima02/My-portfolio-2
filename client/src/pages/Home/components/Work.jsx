@@ -10,8 +10,8 @@ import { useNavigate } from 'react-router-dom';
 function Work() {
 
     const [imageUrl, setImageUrl] = useState('');
-    
-    console.log(imageUrl)
+    const [autoPlay, setAutoPlay] = useState(false)
+    console.log(autoPlay)
     const [index, setIndex] = useState(0);
     const timeoutRef = useRef(null);
     const prevElementRef = useRef(null);
@@ -27,12 +27,14 @@ function Work() {
 
     useEffect(() => {
         handleScrolling();
-        resetTimeout();
-
+        
+        
             timeoutRef.current = setTimeout(() => {
-                if(imageUrl.url !== ''){
+                if(imageUrl.url !== '' && autoPlay == true){
                 
                     setIndex((prev) => prev == imageUrl?.photos ? 0 : prev + 1)
+                }else{
+                    resetTimeout();
                 }
                 
             }, 1000);
@@ -40,7 +42,7 @@ function Work() {
         return () => {
             resetTimeout();
         }
-    }, [index, prevElementRef])
+    }, [index, prevElementRef, autoPlay])
 
     const resetTimeout = () => {
         if (timeoutRef.current) {
@@ -61,23 +63,27 @@ function Work() {
         switch(e.target.id){
             case 'finance':
                 setIndex(0)
+                setAutoPlay(true)
                 chooseRandomProject(e.target.id);
                console.log(e.target.id)
             break;
             case 'forum':
                 setIndex(0)
+                setAutoPlay(true)
                 chooseRandomProject(e.target.id);
 
             console.log(e.target.id)
             break;
             case 'joomble':
                 setIndex(0)
+                setAutoPlay(true)
                 chooseRandomProject(e.target.id);
             console.log(e.target.id)
               
             break;
             case 'weather':
                 setIndex(0)
+                setAutoPlay(true)
                 chooseRandomProject(e.target.id);
 
                 console.log(e.target.id)
@@ -154,10 +160,10 @@ function Work() {
             </div>
             <div className='mt-32 hidden md:block'>
 
-                <p id='finance' onClick={(e) => handleLinkTo(e)} onMouseEnter={(e) => handleHovering(e)} className={` transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>FINANCE WEB APP</p>
-                <p id='forum' onClick={(e) => handleLinkTo(e)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>FORUM WEB APP</p>
-                <p id='joomble' onClick={(e) => handleLinkTo(e)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>JOOMBLE E-COMMERCE</p>
-                <p id='weather' onClick={(e) => handleLinkTo(e)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 md:text-5xl`}>WEATHER WEB APP</p>    
+                <p id='finance' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={` transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>FINANCE WEB APP</p>
+                <p id='forum' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>FORUM WEB APP</p>
+                <p id='joomble' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>JOOMBLE E-COMMERCE</p>
+                <p id='weather' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 md:text-5xl`}>WEATHER WEB APP</p>    
                 
                 {imageUrl ?
                     <div className='relative object-contain overflow-hidden w-56 h-56 bg-red-500'>
@@ -171,7 +177,7 @@ function Work() {
                 <div id='finance' onClick={(e) => handleLinkTo(e)}>
                     <div className='pointer-events-none skewElem relative object-contain overflow-hidden  w-80 h-56 bg-red-500'>
                                         
-                        <img className={`absolute top-0 left-0 w-full h-full`} src={`${storageImages.find((item) => item.name == 'finance').url}${index}.png`} alt="" />
+                        <img className={`absolute top-0 left-0 w-full h-full`} src={`${storageImages.find((item) => item.name == 'finance').url}${index > 6 ? 0 : index}.png`} alt="" />
                                             
                     </div>
                     <h1 className='text-2xl font-black mt-5'>FINANCE WEB APP</h1>
@@ -179,7 +185,7 @@ function Work() {
                 <div id='forum' onClick={(e) => handleLinkTo(e)}>
                     <div className='pointer-events-none skewElem relative object-contain overflow-hidden  w-80 h-56 bg-red-500'>
                                         
-                        <img className={`absolute top-0 left-0 w-full h-full`} src={`${storageImages.find((item) => item.name == 'forum').url}${index}.png`} alt="" />
+                        <img className={`absolute top-0 left-0 w-full h-full`} src={`${storageImages.find((item) => item.name == 'forum').url}${index > 2 ? 0 : index}.png`} alt="" />
                                             
                     </div>
                     <h1 className='text-2xl font-black mt-5'>FORUM WEB APP</h1>
@@ -187,7 +193,7 @@ function Work() {
                 <div id='joomble' onClick={(e) => handleLinkTo(e)}>
                     <div onClick={(e) => handleLinkTo(e)} className='pointer-events-none skewElem relative object-contain overflow-hidden  w-80 h-56 bg-red-500'>
                                         
-                        <img className={`absolute top-0 left-0 w-full h-full`} src={`${storageImages.find((item) => item.name == 'joomble').url}${index}.png`} alt="" />
+                        <img className={`absolute top-0 left-0 w-full h-full`} src={`${storageImages.find((item) => item.name == 'joomble').url}${index > 5 ? 0 : index}.png`} alt="" />
                                             
                     </div>
                     <h1 className='text-2xl font-black mt-5'>JOOMBLE E-COMMERCE</h1>
