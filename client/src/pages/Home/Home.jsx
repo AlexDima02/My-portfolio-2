@@ -1,17 +1,76 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Header from '../../components/Header/Header';
 import About from './components/About';
 import Work from './components/Work';
 import Navbar from '../../components/Navbar/Navbar';
+import Contact from './components/Contact';
 
 function Home(){
+    const sectionWork = useRef(null)
+    const sectionAbout = useRef(null)
+    const sectionContact = useRef(null)
+    const sectionHero = useRef(null)
+    const [isIntersecting, setInterescting] = useState('');
+    const [activeLink, setActive] = useState([]);
+    
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    }
+
+    const callBackFn = (entries) => {
+
+        const [entry] = entries
+        
+        switch(entry.target.id){
+            case 'Hero':
+                setInterescting(entry.target.id)
+                setActive([])
+                console.log(entry.target.id)
+            break;
+            case 'About':
+                setInterescting(entry.target.id)
+                setActive([])
+                console.log(entry.target.id)
+            break;
+            case 'Work':
+                setInterescting(entry.target.id)
+                setActive([])
+                console.log(entry.target.id)
+            break;
+            case 'Contact':
+                setInterescting(entry.target.id)
+                setActive([])
+                console.log(entry.target.id)
+            break;
+        }
+    }
+
+    useEffect(() => {
+        const observerSectionWork = new IntersectionObserver(callBackFn, options);
+        if(sectionWork.current) observerSectionWork.observe(sectionWork.current);
+        const observerSectionAbout = new IntersectionObserver(callBackFn, options);
+        if(sectionAbout.current) observerSectionAbout.observe(sectionAbout.current);
+        const observerSectionHero = new IntersectionObserver(callBackFn, options);
+        if(sectionHero.current) observerSectionHero.observe(sectionHero.current);
+        const observerSectionContact = new IntersectionObserver(callBackFn, options);
+        if(sectionContact.current) observerSectionContact.observe(sectionContact.current);
+       
+        return () => {
+            if(sectionWork.current) observerSectionWork.unobserve(sectionWork.current);
+            if(sectionAbout.current) observerSectionAbout.unobserve(sectionAbout.current);
+            if(sectionHero.current) observerSectionHero.unobserve(sectionHero.current);
+            if(sectionContact.current) observerSectionContact.unobserve(sectionContact.current);
+        }
+    }, [])
 
     return (
         <>
             <div className='w-full flex place-content-center fixed bottom-10 z-50'>
-                <Navbar />
+                <Navbar setActive={setActive} activeLink={activeLink} setInterescting={setInterescting} isIntersecting={isIntersecting} sectionHero={sectionHero} sectionWork={sectionWork} sectionAbout={sectionAbout} sectionContact={sectionContact}/>
             </div>
-            <Header />
+            <Header sectionHero={sectionHero}/>
             <div className='border border-red-400 flex flex-col place-content-start min-h-screen -z-50'>
                     <div className='flex justify-center place-content-center overflow-hidden mt-12'>
                         <div className='flex'>
@@ -39,10 +98,13 @@ function Home(){
                     </div>
             </div>
             <div className='border border-red-500 min-h-screen'>
-                <About />
+                <About sectionAbout={sectionAbout}/>
             </div>
             <div className='border border-red-500 min-h-screen'>
-                <Work />
+                <Work sectionWork={sectionWork}/>
+            </div>
+            <div className='border border-red-500 min-h-screen'>
+                <Contact sectionContact={sectionContact}/>
             </div>
         </>
     )

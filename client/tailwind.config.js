@@ -12,7 +12,8 @@ export default {
         "tertiary-color": "#EBEBD3"
       },
       textColor:{
-        "primary-color": "#212121"
+        "primary-color": "#212121",
+        "secondary-color": "#FE6D3F"
       },
       keyframes: {
         "rightToLeft": {

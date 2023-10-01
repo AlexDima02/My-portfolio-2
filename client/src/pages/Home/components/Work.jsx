@@ -7,11 +7,11 @@ import anime from "animejs/lib/anime.es.js"
 import splt from 'spltjs';
 import { useNavigate } from 'react-router-dom';
 
-function Work() {
+function Work({sectionWork}) {
 
     const [imageUrl, setImageUrl] = useState('');
     const [autoPlay, setAutoPlay] = useState(false)
-    console.log(autoPlay)
+    console.log(imageUrl)
     const [index, setIndex] = useState(0);
     const timeoutRef = useRef(null);
     const prevElementRef = useRef(null);
@@ -122,7 +122,7 @@ function Work() {
     }
 
   return (
-    <div>
+    <div id='Work' ref={sectionWork}>
             <div className='flex place-content-center overflow-hidden'>
                                 <div className='flex animate-rightToLeft'>
                                     
@@ -159,19 +159,47 @@ function Work() {
                                 </div>
             </div>
             <div className='mt-32 hidden md:block'>
-
-                <p id='finance' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={` transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>FINANCE WEB APP</p>
-                <p id='forum' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>FORUM WEB APP</p>
-                <p id='joomble' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>JOOMBLE E-COMMERCE</p>
-                <p id='weather' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 md:text-5xl`}>WEATHER WEB APP</p>    
-                
-                {imageUrl ?
-                    <div className='relative object-contain overflow-hidden w-56 h-56 bg-red-500'>
+                <div className='relative'>
+                    <p id='finance' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={` transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>FINANCE WEB APP</p>
+                    {imageUrl.name == 'finance' ?
+                    <div className='absolute top-0 left-[60%] -translate-x-[60%] z-40 object-contain overflow-hidden w-96 h-72 rounded-md'>
                                     
-                            <img className={`absolute top-0 left-0 w-full h-full`} src={`${imageUrl.url}${index}.png`} alt="" />
+                            <img className={`w-full h-full`} src={`${imageUrl.url}${index}.png`} alt="" />
                 
-                    </div>
-                : null} 
+                        </div>
+                    : null}
+                </div>
+                <div className='relative'>
+                    <p id='forum' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>FORUM WEB APP</p>
+                    {imageUrl.name == 'forum' ?
+                    <div className='absolute top-0 left-[60%] -translate-x-[60%] z-40 object-contain overflow-hidden w-96 h-72 rounded-md'>
+                                    
+                            <img className={`w-full h-full`} src={`${imageUrl.url}${index}.png`} alt="" />
+                
+                        </div>
+                    : null}  
+                </div>
+                <div className='relative'>
+                    <p id='joomble' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>JOOMBLE E-COMMERCE</p>
+                    {imageUrl.name == 'joomble' ?
+                    <div className='absolute top-0 left-[60%] -translate-x-[60%] z-40 object-contain overflow-hidden w-96 h-72 rounded-md'>
+                                    
+                            <img className={`w-full h-full`} src={`${imageUrl.url}${index}.png`} alt="" />
+                
+                        </div>
+                    : null} 
+                </div>
+                <div className='relative'>
+                    <p id='weather' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 md:text-5xl`}>WEATHER WEB APP</p>    
+                    {imageUrl.name == 'weather' ?
+                    <div className='absolute top-0 left-[60%] -translate-x-[60%] z-40 object-contain overflow-hidden w-96 h-72 rounded-md'>
+                                    
+                            <img className={`w-full h-full`} src={`${imageUrl.url}${index}.png`} alt="" />
+                
+                        </div>
+                    : null}
+                </div>
+                 
             </div>
             <div className='grid grid-cols-1 mb-28 mt-32 mx-10 grid-rows-3 md:hidden text-white gap-16'>
                 <div id='finance' onClick={(e) => handleLinkTo(e)}>

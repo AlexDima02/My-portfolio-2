@@ -5,7 +5,7 @@ import StoryLayout from '../../../components/StoryLayout/StoryLayout';
 import { motion } from "framer-motion"
 
 
-function About() {
+function About({sectionAbout}) {
 
     const tabs = [
         {id: 1, type: 'SERVICES'},
@@ -35,7 +35,7 @@ function About() {
     }
 
   return (
-        <div className='flex flex-col'>
+        <div id='About' ref={sectionAbout} className='flex flex-col'>
             <div className='flex place-content-center my-16'>
                 <div className='flex text-gray-400 w-[80%] place-content-between px-4 md:w-1/2'>
                     {tabs.map((item, id) => (
