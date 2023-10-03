@@ -94,22 +94,22 @@ function InterestLayout() {
             case 'i1':
                 
                 setSelectedItem([e.target.id])
-                setChosenText('Matthis (HE/HIM) is a nomad product and brand designer with a passion for art and technology. He uses Webflow and other low-code tools to create stunning, one-of-a-kind pieces that come to life on the internet. Currently residing in the lush jungle of Mexico, Matthis operates globally and is ready to take on any design challenge.')
+                setChosenText('When I am not working I like to immerse myself in all sort of strategy games that puts my mind in different contexts or action games.')
             break;
             case 'i2':
                 
                 setSelectedItem([e.target.id])
-                setChosenText('Matthis (HE/HIM) is a nomad product and brand designer with a passion for art and technology. He uses Webflow and other low-code tools to create stunning, one-of-a-kind pieces that come to life on the internet. Currently residing in the lush jungle of Mexico, Matthis opera.')
+                setChosenText('Recently I discovered that I like 3D World and I spend some time learning more about it such as 3D modeling or game engines.')
             break;
             case 'i3':
                 
 
                 setSelectedItem([e.target.id])
-                setChosenText('b')
+                setChosenText('When I prefer to do something intense and understand new things about our world I refugee myself in the world of technology where the sky is the limit.')
             break;
             case 'i4':
                 setSelectedItem([e.target.id])
-                setChosenText('a')
+                setChosenText('I enjoy reading all sort of stuff from nouvels to technicals books about programming to grasp some knowledge everytime but when I just want to relax I prefer to get into the Orient world and read stoicism books.')
             break;
         }
 
@@ -133,29 +133,29 @@ function InterestLayout() {
     </div>
         <div className='grid grid-cols-1 mb-28 mx-10 grid-rows-3 md:hidden text-white gap-16'>
             <div>
-                <div className='skewElem rounded-md bg-slate-400 p-5 text-sm'>
-                    <p>Matthis (HE/HIM) is a nomad product and brand designer with a passion for art and technology. He uses Webflow and other low-code tools to create stunning, one-of-a-kind pieces that come to life on the internet. Currently residing in the lush jungle of Mexico, Matthis operates globally and is ready to take on any design challenge.</p>
+                <div className='skewElem rounded-md bg-gray-700 p-5 text-sm'>
+                    <p>When I am not working I like to immerse myself in all sort of strategy games that puts my mind in different contexts or action games.</p>
                     
                 </div>
                 <h1 className='text-2xl font-black mt-5'>GAMING</h1>
             </div>
                 <div>
-                    <div className='skewElem rounded-md bg-slate-400 p-5 text-sm'>
-                        <p>Matthis (HE/HIM) is a nomad product and brand designer with a passion for art and technology. He uses Webflow and other low-code tools to create stunning, one-of-a-kind pieces that come to life on the internet. Currently residing in the lush jungle of Mexico, Matthis operates globally and is ready to take on any design challenge.</p>
+                    <div className='skewElem rounded-md bg-gray-700 p-5 text-sm'>
+                        <p>Recently I discovered that I like 3D World and I spend some time learning more about it such as 3D modeling or game engines.</p>
                         
                     </div>
                     <h1 className='text-2xl font-black mt-5'>3D Graphics</h1>
                 </div>
                 <div>
-                    <div className='skewElem rounded-md bg-slate-400 p-5 text-sm'>
-                        <p>Matthis (HE/HIM) is a nomad product and brand designer with a passion for art and technology. He uses Webflow and other low-code tools to create stunning, one-of-a-kind pieces that come to life on the internet. Currently residing in the lush jungle of Mexico, Matthis operates globally and is ready to take on any design challenge.</p>
+                    <div className='skewElem rounded-md bg-gray-700 p-5 text-sm'>
+                        <p>When I prefer to do something intense and understand new things about our world I refugee myself in the world of technology where the sky is the limit.</p>
                         
                     </div>
                     <h1 className='text-2xl font-black mt-5'>Technology</h1>
                 </div>
                 <div className='mb-24'>
-                    <div className='skewElem rounded-md bg-slate-400 p-5 text-sm'>
-                        <p>Matthis (HE/HIM) is a nomad product and brand designer with a passion for art and technology. He uses Webflow and other low-code tools to create stunning, one-of-a-kind pieces that come to life on the internet. Currently residing in the lush jungle of Mexico, Matthis operates globally and is ready to take on any design challenge.</p>
+                    <div className='skewElem rounded-md bg-gray-700 p-5 text-sm'>
+                        <p>I enjoy reading all sort of stuff from nouvels to technicals books about programming to grasp some knowledge everytime but when I just want to relax I prefer to get into the Orient world and read stoicism books.</p>
                     
                     </div>
                     <h1 className='text-2xl font-black mt-5'>Philosophy</h1>

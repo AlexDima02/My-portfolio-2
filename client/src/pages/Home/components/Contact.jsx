@@ -48,15 +48,15 @@ function Contact({sectionContact}) {
             </form>
             <div className='flex flex-col place-content-center w-full px-5 mt-20 mb-40'>
                 <div className='transition-all relative hover:bg-[#D9D9D9] hover:text-primary-color text-white font-bold p-7 cursor-pointer'>
-                   <a target='_blank' className='w-full absolute top-[50%] -translate-y-[50%] left-2' href="">GitHub</a>
+                   <a target='_blank' className='w-full absolute top-[50%] -translate-y-[50%] left-2' href="https://github.com/AlexDima02">GitHub</a>
                    <span className='absolute right-2 top-[50%] -translate-y-[50%]'><FontAwesomeIcon icon={faSquareArrowUpRight} style={{color: "#000000", width: "30px", height: "30px"}} /></span> 
                 </div>
                 <div className='transition-all relative hover:bg-[#D9D9D9] hover:text-primary-color text-white font-bold p-7 cursor-pointer'>
-                   <a target='_blank' className='w-full absolute top-[50%] -translate-y-[50%] left-2' href="">LinkedIn</a>
+                   <a target='_blank' className='w-full absolute top-[50%] -translate-y-[50%] left-2' href="https://www.linkedin.com/in/dimulescu-alexandru/">LinkedIn</a>
                    <span className='absolute right-2 top-[50%] -translate-y-[50%]'><FontAwesomeIcon icon={faSquareArrowUpRight} style={{color: "#000000", width: "30px", height: "30px"}} /></span> 
                 </div>
                 <div className='transition-all relative hover:bg-[#D9D9D9] hover:text-primary-color text-white font-bold p-7 cursor-pointer'>
-                   <a target='_blank' className='w-full absolute top-[50%] -translate-y-[50%] left-2' href="">Facebook</a>
+                   <a target='_blank' className='w-full absolute top-[50%] -translate-y-[50%] left-2' href="https://web.facebook.com/alexandru.dimulescu.35/">Facebook</a>
                    <span className='absolute right-2 top-[50%] -translate-y-[50%]'><FontAwesomeIcon icon={faSquareArrowUpRight} style={{color: "#000000", width: "30px", height: "30px"}} /></span> 
                 </div>
             </div>

@@ -3,7 +3,7 @@ import React from 'react'
 function Header({sectionHero}) {
   return (
     <nav id='Hero' ref={sectionHero} className='flex place-content-between p-4'>
-        <div>
+        <div className='opacity-0'>
             <a className='p-2' href=''>Logo</a>
         </div>
         <div className='flex'>

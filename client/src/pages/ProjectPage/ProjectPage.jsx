@@ -27,12 +27,12 @@ function ProjectPage() {
             paragraph4: '2 levels of reply system similar to Facebook',
             paragraph5: 'Markdown editor to create your new post and preview the result before submitting it'
         }, url: './src/assets/Forum-web-app-project/', photo: 3, link: 'https://curiosity-forum.netlify.app/', repo: 'https://github.com/AlexDima02/Forum'},
-        {title: 'Weather Web App', name: '/weather', description: '', details: {
-            paragraph1: '',
-            paragraph2: '',
-            paragraph3: '',
-            paragraph4: ''
-        }, url: './src/assets/Weather-web-app-project/'},
+        {title: 'Beatmaker', name: '/beatmaker', description: 'It is a personal project that introduced me in the web application world, I learned a lot about OOP concepts and played with JavaScript ins and outs. It is a drum pad for the music creators and has three types of sounds for each drum.', details: {
+            paragraph1: 'Create beats with 8 drums and have 3 types of drums',
+            paragraph2: 'This project takes advantage of the integrated local storage of your website. Every new project created is stored in the local storage.',
+            paragraph3: 'There are 8 drums on each of the 3 columns',
+            paragraph4: 'The level in the middle controls the BPM of your song.'
+        }, url: './src/assets/Beatmaker-app-project/', photo: 1, link: 'https://beatmaker-create-music.netlify.app/', repo: 'https://github.com/AlexDima02/Beatmaker'},
     ])
 
     const location = useLocation();

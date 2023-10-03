@@ -22,7 +22,7 @@ function Work({sectionWork}) {
         {name: 'finance', url: './src/assets/Finance-web-app-project/', photos: 6}, 
         {name: 'forum', url: './src/assets/Forum-web-app-project/', photos: 2}, 
         {name: 'joomble', url: './src/assets/Joomble-ecommerce-project/', photos: 4}, 
-        {name: 'weather', url: './src/assets/Weather-web-app-project/', photos: 11}
+        {name: 'beatmaker', url: './src/assets/Beatmaker-app-project/', photos: 0}
     ]
 
     useEffect(() => {
@@ -81,7 +81,7 @@ function Work({sectionWork}) {
             console.log(e.target.id)
               
             break;
-            case 'weather':
+            case 'beatmaker':
                 setIndex(0)
                 setAutoPlay(true)
                 chooseRandomProject(e.target.id);
@@ -158,7 +158,7 @@ function Work({sectionWork}) {
                                     </div>
                                 </div>
             </div>
-            <div className='mt-32 hidden md:block'>
+            <div className='my-96 hidden md:block'>
                 <div className='relative'>
                     <p id='finance' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={` transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>FINANCE WEB APP</p>
                     {imageUrl.name == 'finance' ?
@@ -190,8 +190,8 @@ function Work({sectionWork}) {
                     : null} 
                 </div>
                 <div className='relative'>
-                    <p id='weather' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 md:text-5xl`}>WEATHER WEB APP</p>    
-                    {imageUrl.name == 'weather' ?
+                    <p id='beatmaker' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={`transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 md:text-5xl`}>BEATMAKER APP</p>    
+                    {imageUrl.name == 'beatmaker' ?
                     <div className='absolute top-0 left-[60%] -translate-x-[60%] z-40 object-contain overflow-hidden w-96 h-72 rounded-md'>
                                     
                             <img className={`w-full h-full`} src={`${imageUrl.url}${index}.png`} alt="" />
@@ -226,13 +226,13 @@ function Work({sectionWork}) {
                     </div>
                     <h1 className='text-2xl font-black mt-5'>JOOMBLE E-COMMERCE</h1>
                 </div>
-                <div id='weather' onClick={(e) => handleLinkTo(e)} className='mb-24'>
+                <div id='beatmaker' onClick={(e) => handleLinkTo(e)} className='mb-24'>
                     <div className='pointer-events-none skewElem relative object-contain overflow-hidden w-80 h-56 bg-red-500'>
                                         
-                        <img className={`absolute top-0 left-0 w-full h-full`} src={`${storageImages.find((item) => item.name == 'weather').url}${index}.png`} alt="" />
+                        <img className={`absolute top-0 left-0 w-full h-full`} src={`${storageImages.find((item) => item.name == 'beatmaker').url}${index}.png`} alt="" />
                             
                     </div>
-                    <h1 className='text-2xl font-black mt-5'>WEATHER WEB APP</h1>
+                    <h1 className='text-2xl font-black mt-5'>BEATMAKER APP</h1>
                 </div>
             </div>
     </div>

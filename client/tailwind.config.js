@@ -11,6 +11,9 @@ export default {
         "secondary-color": "#FE6D3F",
         "tertiary-color": "#EBEBD3"
       },
+      backgroundImage: {
+        "hero-image": 'url("./src/assets/ian-dooley-d1UPkiFd04A-unsplash.png")'
+      },
       textColor:{
         "primary-color": "#212121",
         "secondary-color": "#FE6D3F"
