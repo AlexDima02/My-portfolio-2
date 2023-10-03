@@ -4,11 +4,8 @@ import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
 
 function Contact({sectionContact}) {
   return (
-    <div id='Contact' ref={sectionContact} className='max-w-[1400px] m-auto'>
+    <div id='Contact' ref={sectionContact} className='max-w-[1400px] m-auto md:mt-96'>
         <div className='flex flex-col place-content-center'>
-            <div>
-
-            </div>
             <div className='text-white my-16'>
                 <h1 className='text-center text-5xl font-bold text-white'>CONTACT ME</h1>
             </div>

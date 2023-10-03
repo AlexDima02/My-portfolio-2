@@ -158,7 +158,7 @@ function Work({sectionWork}) {
                                     </div>
                                 </div>
             </div>
-            <div className='my-96 hidden md:block'>
+            <div className='py-96 hidden md:block'>
                 <div className='relative'>
                     <p id='finance' onClick={(e) => handleLinkTo(e)} onMouseLeave={() => setAutoPlay(false)} onMouseEnter={(e) => handleHovering(e)} className={` transition-all text-white text-2xl hover:py-4 hover:bg-secondary-color font-bold cursor-pointer pl-10 mb-16 md:text-5xl`}>FINANCE WEB APP</p>
                     {imageUrl.name == 'finance' ?

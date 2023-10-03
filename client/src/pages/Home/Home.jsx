@@ -117,8 +117,59 @@ function Home(){
                 <Work sectionWork={sectionWork}/>
             </div>
             <div className=' min-h-screen'>
-                <Contact sectionContact={sectionContact}/>
-            </div>
+                {/* <div className='bg-white opacity-[2%] h-[20%] min-w-full absolute top-0 left-0 blur-xl -z-50'></div> */}
+                {/* <div className='flex relative'> */}
+                    {/* <div className='-z-40 w-full absolute text-white top-0 blur-2xl opacity-20 flex animate-leftToRight animate-upDown overflow-hidden'>
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                    </div>
+                    <div className='-z-40 w-full absolute text-white top-0 blur-2xl opacity-20 flex animate-leftToRight animate-upDown overflow-hidden'>
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                    </div>
+                    <div className='-z-40 w-full absolute text-white top-0 blur-2xl opacity-20 flex animate-leftToRight animate-upDown overflow-hidden'>
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                    </div>
+                    <div className='-z-40 w-full absolute text-white top-0 blur-2xl opacity-20 flex animate-leftToRight animate-upDown overflow-hidden'>
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                    </div>
+                    <div className='-z-40 w-full absolute h-full text-white top-4 left-0 opacity-40 blur-lg flex animate-leftToRight  overflow-hidden'>
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                    </div>
+                    <div className='-z-40 w-full absolute h-full text-white top-4 left-0 opacity-40 blur-lg flex animate-leftToRight  overflow-hidden'>
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                    </div>
+                    <div className='-z-40 w-full absolute h-full text-white top-4 left-0 opacity-40 blur-lg flex animate-leftToRight  overflow-hidden'>
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                    </div>
+                    <div className='-z-40 w-full absolute h-full text-white top-4 left-0 opacity-40 blur-lg flex animate-leftToRight  overflow-hidden'>
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                        <img className='w-full h-full' src="./src/assets/Vector 1.png" alt="" />
+                    </div> */}
+                    <Contact sectionContact={sectionContact}/>
+                </div>
+            {/* </div> */}
         </>
     )
 
