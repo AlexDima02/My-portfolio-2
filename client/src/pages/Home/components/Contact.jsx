@@ -38,7 +38,7 @@ function Contact({sectionContact}) {
                 <div className='flex place-content-center mt-5'>
                     <button type='submit' className='text-2xl font-bold text-white hover:bg-opacity-30 px-5 py-2 transition-all hover:bg-secondary-color'>SUBMIT</button>
                 </div>
-                <input type="hidden" name="_next" value="http://localhost:5173/"/>
+                <input type="hidden" name="_next" value="https://alexandru-dimulescu.netlify.app/"/>
                 <input type="text" name="_honey" className='hidden'/>
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_subject" value="New message from your website!"></input>

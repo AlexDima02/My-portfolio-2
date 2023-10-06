@@ -19,10 +19,10 @@ function Work({sectionWork}) {
     const navigate = useNavigate();
 
     const storageImages = [
-        {name: 'finance', url: './src/assets/Finance-web-app-project/', photos: 6}, 
-        {name: 'forum', url: './src/assets/Forum-web-app-project/', photos: 2}, 
-        {name: 'joomble', url: './src/assets/Joomble-ecommerce-project/', photos: 4}, 
-        {name: 'beatmaker', url: './src/assets/Beatmaker-app-project/', photos: 0}
+        {name: 'finance', url: 'img/Finance-web-app-project/', photos: 6}, 
+        {name: 'forum', url: 'img/Forum-web-app-project/', photos: 2}, 
+        {name: 'joomble', url: 'img/Joomble-ecommerce-project/', photos: 4}, 
+        {name: 'beatmaker', url: 'img/Beatmaker-app-project/', photos: 0}
     ]
 
     useEffect(() => {
