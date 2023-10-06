@@ -36,7 +36,7 @@ function Contact({sectionContact}) {
                     <textarea name="message" required className='bg-gray-700 outline-none rounded-sm w-full p-5 text-white font-bold tracking-wider' placeholder='Write me a message...' id="" cols="30" rows="10"></textarea>
                 </div>
                 <div className='flex place-content-center mt-5'>
-                    <button type='submit' className='font-bold text-white'>SUBMIT</button>
+                    <button type='submit' className='text-2xl font-bold text-white hover:bg-opacity-30 px-5 py-2 transition-all hover:bg-secondary-color'>SUBMIT</button>
                 </div>
                 <input type="hidden" name="_next" value="http://localhost:5173/"/>
                 <input type="text" name="_honey" className='hidden'/>
