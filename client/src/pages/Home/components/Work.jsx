@@ -7,8 +7,9 @@ import anime from "animejs/lib/anime.es.js"
 import splt from 'spltjs';
 import { useNavigate } from 'react-router-dom';
 
-function Work({sectionWork}) {
+function Work({sectionWork, isIntersecting}) {
 
+    console.log(isIntersecting)
     const [imageUrl, setImageUrl] = useState('');
     const [autoPlay, setAutoPlay] = useState(false)
     console.log(imageUrl)

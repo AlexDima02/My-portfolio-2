@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useRoutes } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useNavigate } from 'react-router-dom';
+
 
 function ProjectPage() {
     
     const [currentProject, setCurrentProject] = useState();
-    
+    const navigate = useNavigate();
     const [infoProject, setInfoProject] = useState([
         {title: 'Finance Web App', name: '/finance', description: 'It is a web app designed to help every people keep track of their expenses. For me it was a game changer because it was created from the necessity of managing my money during my Erasmus program in a foreign country.', details: {
             paragraph1: 'Set limit of your budget automatically',
@@ -50,6 +54,12 @@ function ProjectPage() {
         }
         return arr;
     }
+
+    const handleExitView = () => {
+
+       navigate(-1, history.state);
+
+    }
   
     return (
         <div className='text-white max-w-[1400px] m-auto'>
@@ -65,15 +75,23 @@ function ProjectPage() {
                 animate={{transform: 'translateY(-100%)'}}
                 transition={{duration: 2, ease: [0.22, 1, 0.36, 1]}}>
             </motion.div>
-            <div className='flex w-full place-content-end py-5'>
-                <a target='_blank' id='button' className='border border-white p-2 rounded-full hover:text-white' href={currentProject?.link}>
-                    Visit it
-                    <span id="circle"></span>
-                </a>
-                <a target='_blank' id='button' className='border border-white p-2 rounded-full mx-4' href={currentProject?.repo}>
-                    GitHub
-                    <span id="circle"></span>
-                </a>
+            <div className='flex w-full place-content-between py-5'>
+                <div className='w-fit flex' onClick={() => handleExitView()}>
+                    <a id='button' className='border border-white p-2 rounded-full mx-4'>
+                        <FontAwesomeIcon  id='fa-left' icon={faArrowLeft} style={{color: "#ffffff",}} />
+                        <span id="circle"></span>
+                    </a>
+                </div> 
+                <div className='w-fit flex'>
+                    <a target='_blank' id='button' className='border border-white p-2 rounded-full hover:text-white' href={currentProject?.link}>
+                        Visit it
+                        <span id="circle"></span>
+                    </a>
+                    <a target='_blank' id='button' className='border border-white p-2 rounded-full mx-4' href={currentProject?.repo}>
+                        GitHub
+                        <span id="circle"></span>
+                    </a>
+                </div>
             </div>
             <div id='header' className='px-5 flex-col mt-10 md:flex-row'>
                 <div className='w-full'>

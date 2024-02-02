@@ -7,7 +7,6 @@ import Contact from './components/Contact';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
-
 function Home(){
     const sectionWork = useRef(null)
     const sectionAbout = useRef(null)
@@ -80,7 +79,18 @@ function Home(){
                 <Navbar setActive={setActive} activeLink={activeLink} setInterescting={setInterescting} isIntersecting={isIntersecting} sectionHero={sectionHero} sectionWork={sectionWork} sectionAbout={sectionAbout} sectionContact={sectionContact}/>
             </div>
             <Header sectionHero={sectionHero}/>
-            
+            <motion.div 
+                className='slide-in'
+                initial={{transform: 'translateX(0%)'}}
+                animate={{transform: 'translateY(100%)'}}
+                transition={{duration: 2, ease: [0.22, 1, 0.36, 1]}}>
+            </motion.div>
+            <motion.div
+                className='slide-out'
+                initial={{transform: 'translateX(0%)'}}
+                animate={{transform: 'translateY(-100%)'}}
+                transition={{duration: 2, ease: [0.22, 1, 0.36, 1]}}>
+            </motion.div>
             <div className='flex flex-col place-content-start min-h-screen -z-50'>
                     <div  className='flex justify-center place-content-center overflow-hidden mt-12'>
                         <div className='flex'>
@@ -114,7 +124,7 @@ function Home(){
                 <About sectionAbout={sectionAbout}/>
             </div>
             <div className=' min-h-screen'>
-                <Work sectionWork={sectionWork}/>
+                <Work isIntersecting={isIntersecting} sectionWork={sectionWork}/>
             </div>
             <div className=' min-h-screen overflow-hidden'>
                 {/* <div className='bg-white opacity-[2%] h-[20%] min-w-full absolute top-0 left-0 blur-xl -z-50'></div> */}
